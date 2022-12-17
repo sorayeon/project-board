@@ -8,6 +8,8 @@
 # draw.io backup file
 document/**/*.bkp
 
+# QueryDSL
+/src/main/generated
 
 # User-specific stuff
 .idea/**/workspace.xml
