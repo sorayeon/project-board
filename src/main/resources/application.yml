@@ -26,6 +26,10 @@ spring:
   sql:
     init:
       mode: always # embedded 임베디드 DB의 경우만 동작, never 동작안함
+  data:
+    rest:
+      base-path: /api
+      detection-strategy: annotated
 
 decorator:
   datasource:
