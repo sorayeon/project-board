@@ -20,7 +20,7 @@ spring:
   jpa:
     defer-datasource-initialization: true # data.sql 로드
     hibernate:
-      ddl-auto: create # none create
+      ddl-auto: none # none create
     properties:
       hibernate.default_batch_fetch_size: 100
   sql:
@@ -30,6 +30,9 @@ spring:
     rest:
       base-path: /api
       detection-strategy: annotated
+  h2:
+    console:
+      enabled: false
 
 decorator:
   datasource:
