@@ -7,28 +7,29 @@ management:
 
 logging:
   level:
+    p6spy: info
     com.takealook.projectboard: debug
     org.springframework.web.servlet: debug
-    org.hibernate.type.descriptor.sql.BasicBinder: trace
 
 spring:
   datasource:
-    url: ENC(78hlc2cJdAw5Lgw37j8w7zuWlSWXSq5vaQfuds3n5b6PShL6oOabvBa1vPkDOF8Cs+hr8vf7EeAdBRamWIC89/WMGNJTe/sVVJHI4inNLlaPS4E4yyhEsjF3BnBhvSIayTqOw736Z7t3HyxHRqjBdQ==)
-    username: ENC(4aGcJI+ATyrHsG5kkl3s9So5RmpC2a5jW6EQaQoV3AM=)
-    password: ENC(rv6ZLH9Ufopo7EgkTEzPSwAbu9357Z/0vgbNmBvdrso=)
+    url: ENC(j/dMi1B25PwM1qxtt+g2jTBfnw31ev/WM9Wgf6G3cac7SJe9Lcp7f7J5Y6I9K53WpZT+uNMo1RWJAOBzXajsKER/kbZ1o27y4GvcRUzs9WNzAuwTtPtIFVuqpYmuzkMn1cL41dRnGTLttyOVg1/rFA==)
+    username: ENC(HRDWRmddnenOOOlfd81zblZd5Eml2fqyTdeLir3bS/o=)
+    password: ENC(I4HXNaqRsiHhiu7pmddheEddzLt3Y3DoAuR8P8/8Fjg=)
     driver-class-name: org.postgresql.Driver
   jpa:
     defer-datasource-initialization: true # data.sql 로드
     hibernate:
       ddl-auto: create # none create
-    show-sql: true
     properties:
-      hibernate.format_sql: true
       hibernate.default_batch_fetch_size: 100
-
-  h2:
-    console:
-      enabled: false
   sql:
     init:
       mode: always # embedded 임베디드 DB의 경우만 동작, never 동작안함
+
+decorator:
+  datasource:
+    p6spy:
+      enable-logging: true
+      logging: slf4j
+      multiline: true

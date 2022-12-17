@@ -22,11 +22,26 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    // SQL 출력
+    implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.8.1'
+
+    // 설정정보 암호화 (부트실행시 암호화 키 주입필요 -Djasypt.encryptor.password=암호화키)
+    implementation 'com.github.ulisesbocchio:jasypt-spring-boot-starter:3.0.4'
+    implementation 'org.bouncycastle:bcprov-jdk15on:1.70'
+
+    // DB
     runtimeOnly 'com.h2database:h2'
     runtimeOnly 'org.postgresql:postgresql'
-    compileOnly 'org.projectlombok:lombok'
+
+    // DEVTOOLS
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    // LOMBOK
+    compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+
+    // TEST
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
