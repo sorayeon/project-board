@@ -25,10 +25,6 @@ spring:
     properties:
       hibernate.format_sql: true
       hibernate.default_batch_fetch_size: 100
-
-  h2:
-    console:
-      enabled: false
   sql:
     init:
       mode: always # embedded 임베디드 DB의 경우만 동작, never 동작안함
