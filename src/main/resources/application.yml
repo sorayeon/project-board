@@ -7,9 +7,9 @@ management:
 
 logging:
   level:
+    p6spy: info
     com.takealook.projectboard: debug
     org.springframework.web.servlet: debug
-    org.hibernate.type.descriptor.sql.BasicBinder: trace
 
 spring:
   datasource:
@@ -21,10 +21,15 @@ spring:
     defer-datasource-initialization: true # data.sql 로드
     hibernate:
       ddl-auto: create # none create
-    show-sql: true
     properties:
-      hibernate.format_sql: true
       hibernate.default_batch_fetch_size: 100
   sql:
     init:
       mode: always # embedded 임베디드 DB의 경우만 동작, never 동작안함
+
+decorator:
+  datasource:
+    p6spy:
+      enable-logging: true
+      logging: slf4j
+      multiline: true
