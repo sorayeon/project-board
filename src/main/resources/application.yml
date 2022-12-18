@@ -33,6 +33,8 @@ spring:
   h2:
     console:
       enabled: false
+  thymeleaf3:
+    decoupled-logic: true
 
 decorator:
   datasource:
