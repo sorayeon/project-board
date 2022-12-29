@@ -8,6 +8,21 @@ import org.springframework.util.StringUtils;
 
 import javax.annotation.PostConstruct;
 
+/**
+ * 쿼리 파라이터 바인딩하여 로그 출력 포맷터 설정 Bean
+ * 개발에서만 사용하도록 주의
+ * 1.gradle
+ * implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.8.1'
+ * 2.application.yml
+ * logging:
+ *   level:
+ *     p6spy: info
+ * decorator:
+ *   datasource:
+ *     p6spy:
+ *       enable-logging: true
+ *       logging: slf4j
+ */
 @Component
 public class P6SpyFormatter implements MessageFormattingStrategy {
     @PostConstruct

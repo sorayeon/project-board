@@ -25,6 +25,13 @@ dependencies {
     // web mvc
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
+    // thymeleaf
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
+    // security
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+
     // jpa
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 
@@ -49,6 +56,9 @@ dependencies {
     // LOMBOK
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+
+    // configuration-processor
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 
     // queryDSL 설정
     implementation 'com.querydsl:querydsl-jpa'
