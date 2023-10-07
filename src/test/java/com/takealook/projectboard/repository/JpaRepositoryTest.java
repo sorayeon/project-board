@@ -2,6 +2,7 @@ package com.takealook.projectboard.repository;
 
 import com.takealook.projectboard.config.JpaConfig;
 import com.takealook.projectboard.domain.Article;
+import com.takealook.projectboard.domain.UserAccount;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,11 +22,14 @@ class JpaRepositoryTest {
 
     private final ArticleRepository articleRepository;
     private final ArticleCommentRepository articleCommentRepository;
+    private final UserAccountRepository userAccountRepository;
 
     public JpaRepositoryTest(@Autowired ArticleRepository articleRepository,
-                             @Autowired ArticleCommentRepository articleCommentRepository) {
+                             @Autowired ArticleCommentRepository articleCommentRepository,
+                             @Autowired UserAccountRepository userAccountRepository) {
         this.articleRepository = articleRepository;
         this.articleCommentRepository = articleCommentRepository;
+        this.userAccountRepository = userAccountRepository;
     }
 
     @DisplayName("SELECT 테스트")
@@ -48,8 +52,9 @@ class JpaRepositoryTest {
         // given
         long count = articleRepository.count();
 
+        UserAccount userAccount = userAccountRepository.save(UserAccount.of("uno", "pw", null, null, null));
         // when
-        articleRepository.save(Article.of("게시글 제목", "게실글 내용", "#Spring"));
+        articleRepository.save(Article.of(userAccount,"게시글 제목", "게실글 내용", "#Spring"));
 
         // then
         assertThat(articleRepository.count()).isEqualTo(count + 1);
