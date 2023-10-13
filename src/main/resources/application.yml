@@ -13,15 +13,17 @@ spring:
   profiles:
     active: dev
   datasource:
-    url: ENC(j/dMi1B25PwM1qxtt+g2jTBfnw31ev/WM9Wgf6G3cac7SJe9Lcp7f7J5Y6I9K53WpZT+uNMo1RWJAOBzXajsKER/kbZ1o27y4GvcRUzs9WNzAuwTtPtIFVuqpYmuzkMn1cL41dRnGTLttyOVg1/rFA==)
-    username: ENC(HRDWRmddnenOOOlfd81zblZd5Eml2fqyTdeLir3bS/o=)
-    password: ENC(I4HXNaqRsiHhiu7pmddheEddzLt3Y3DoAuR8P8/8Fjg=)
+    url: ENC(zkyQsVZOxAnUuAxhdwS0W6XBlQrAhTNCr33VNMk0nL1THxAKJtrpplD2qsGk2pwUbotJBzH/B3zPK3djQuOZkA==)
+    username: ENC(IiIMDDiFEaeELrZPqjXVRxHi+oiyEDFzFxLolybiJVU=)
+    password: ENC(tqQLjZLwmytEEKxF/jjisOlLXmI0hZ5ug+gQZQZqWeM=)
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
       ddl-auto: none # none create
     properties:
       hibernate.default_batch_fetch_size: 100
+    defer-datasource-initialization: true
+    open-in-view: false
   data:
     rest:
       base-path: /api
